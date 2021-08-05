@@ -23,7 +23,7 @@ exports.createMessagePayload = function(rawMessage, baseObject = {}) {
   const minifiedMessage = minifyJSON(rawMessage);
   if (minifiedMessage) {
     const jsonMessage = JSON.parse(minifiedMessage);
-    Object.assign(baseObject, { client_payload: jsonMessage });
+    Object.assign(baseObject, jsonMessage);
   }
   return baseObject;
 };
